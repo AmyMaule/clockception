@@ -1,0 +1,93 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f2f2f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.title {
+  color: #333;
+}
+
+.time-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.digit {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  // gap: 0.0625rem;
+}
+
+.digit-divider {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 5rem;
+}
+
+.clock {
+  position: relative;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  border: 2px solid rgb(148, 161, 228);
+  background: linear-gradient(135deg, #eef0ff 25%, #ced3f7);
+  box-shadow: rgba(70, 150, 184, 0.12) 0px 2px 4px 0px, rgba(44, 95, 116, 0.32) 0px 2px 16px 0px;
+
+  // Before is hour hand, after is minute hand
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    background: #333333;
+    width: 0.15rem;
+    height: 0.8125rem;  // refactor to use a var for this for media queries
+    top: 50%;
+    left: 50%;
+    transform-origin: center bottom;
+    border-radius: 100vmax;
+  }
+
+  &::before {
+    transform: translate(-50%, -100%) rotate(var(--hour-hand));
+  }
+
+  &::after {
+    transform: translate(-50%, -100%) rotate(var(--minute-hand));
+  }
+}
+
+
+// To do: add light and dark color schemes
