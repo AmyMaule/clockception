@@ -82,3 +82,12 @@
     ],
 ];
 
+// Key is the time (3 is 3:00, 330 is 3:30) as it looks on the clock
+export const clockMap = {
+  "3": { hour: 3, minute: 0 },
+  "6": { hour: 6, minute: 0 },
+  "9": { hour: 9, minute: 0 },
+  "330": { hour: 3, minute: 30 },
+  "915": { hour: 9, minute: 15 },
+  "930": { hour: 9, minute: 30 },
+}
