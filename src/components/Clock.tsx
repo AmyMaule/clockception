@@ -6,7 +6,7 @@ type ClockProps = {
 };
 
 const Clock = ({ time }: ClockProps) => {
-  const [angles, setAngles] = useState({ hour: 0, minute: 0 });
+  const [angles, setAngles] = useState({ hour: Infinity, minute: Infinity });
   const prevAnglesRef = useRef({ minute: 0, hour: 0 });
 
   const getClockHandPositions = (time: string | null) => {
@@ -40,6 +40,9 @@ const Clock = ({ time }: ClockProps) => {
     setAngles({ minute: nextMinute, hour: nextHour });
   }, [hour, minute]);
 
+  if (angles.hour === Infinity || angles.minute === Infinity) {
+    return null;
+  }
 
   return (
     <div

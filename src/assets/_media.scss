@@ -1,0 +1,39 @@
+@media (max-width: 900px) {
+  .app-container {
+    padding: 1rem 0;
+  }
+
+  .time-container {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  :root {
+    --digit-divider-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --clock-size: 3.5vw;
+    --hand-width: 0.2vw;
+    --hand-height: 1.5vw;
+    --digit-gap: 1vw;
+    --digit-divider-size: 2.5rem;
+  }
+
+  .btn-theme-toggle {
+    font-size: 1.5rem;
+  }
+
+  .time-container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 3rem 0 0 0;
+  }
+}
+
+// TODO: figure out mobile clocks - fine down to 500px
