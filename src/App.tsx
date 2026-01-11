@@ -2,8 +2,14 @@ import { Fragment, useState, useEffect } from 'react';
 import Digit from './components/Digit';
 import './assets/index.scss';
 
+type ThemeType = 'light' | 'dark' | 'retro';
+
+/// CSS: clock hands can go backwards and forward
+
+
 const App = () => {
   const [time, setTime] = useState<number[]>(Array(6).fill(Infinity));
+  const [theme, setTheme] = useState<ThemeType>("light");
 
   const getTimeDigits = (): number[] => {
     const now = new Date();
@@ -29,9 +35,23 @@ const App = () => {
   }
 
   return (
-    <div className="app-container">
+    <div className={`app-container theme-${theme}`}>
       <h1 className="title">Clockception</h1>
-      <p className="subtitle">Analog clocks within digital clocks</p>
+      <p className="subtitle">A digital clock made of analog clocks</p>
+      <div className="theme-toggle-container">
+        <h6 className="theme-toggle-title">Mode:</h6>
+        <div className="theme-toggle-btn-container">
+          <button className={`btn-theme-toggle ${theme === "light" ? "btn-selected" : ""}`} onClick={() => setTheme('light')}
+            >Light
+          </button>
+          <button className={`btn-theme-toggle ${theme === "dark" ? "btn-selected" : ""}`} onClick={() => setTheme('dark')}
+            >Dark
+          </button>
+          <button className={`btn-theme-toggle ${theme === "retro" ? "btn-selected" : ""}`} onClick={() => setTheme('retro')}
+            >Retro
+          </button>
+        </div>
+      </div>
       <div className="time-container">
         {time.map((digit, i) => (
           <Fragment key={i}>
