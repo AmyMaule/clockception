@@ -4,9 +4,6 @@ import './assets/index.scss';
 
 type ThemeType = 'light' | 'dark' | 'retro';
 
-/// CSS: clock hands can go backwards and forward
-
-
 const App = () => {
   const [time, setTime] = useState<number[]>(Array(6).fill(Infinity));
   const [theme, setTheme] = useState<ThemeType>("light");
@@ -29,7 +26,6 @@ const App = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // To do: Add spinner while loading?
   if (time.some(digit => digit === Infinity)) {
     return null;
   }
