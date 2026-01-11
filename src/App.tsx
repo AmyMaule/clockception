@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect } from 'react';
 import Digit from './components/Digit';
-import './App.scss';
+import './assets/index.scss';
 
 const App = () => {
   const [time, setTime] = useState<number[]>(Array(6).fill(Infinity));
@@ -30,7 +30,8 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <h1 className="title">Analog clocks within digital clocks</h1>
+      <h1 className="title">Clockception</h1>
+      <p className="subtitle">Analog clocks within digital clocks</p>
       <div className="time-container">
         {time.map((digit, i) => (
           <Fragment key={i}>

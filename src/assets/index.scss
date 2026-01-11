@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'DS-digi';
+  src: url("./fonts/DS-DIGI.ttf") format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'DS-digi';
+  src: url("./fonts/DS-DIGIB.ttf") format('truetype');
+  font-weight: 700;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f2f2f2;
+  font-family: 'DS-digi';
+  background-color: rgb(235, 235, 235);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,8 +21,6 @@
 
 body {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -25,7 +33,6 @@ body {
 .app-container {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -33,7 +40,16 @@ body {
 }
 
 .title {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
   color: #333;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.75rem;
+  margin: 0;
 }
 
 .time-container {
@@ -42,13 +58,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(58, 139, 231);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  max-height: 20rem;
+  padding: 3rem;
+  margin: auto 0;
 }
 
 .digit {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  // gap: 0.0625rem;
 }
 
 .digit-divider {
@@ -60,24 +82,25 @@ body {
 
 .clock {
   position: relative;
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  border: 2px solid rgb(148, 161, 228);
+  border: 2px solid rgb(202, 207, 239);
   background: linear-gradient(135deg, #eef0ff 25%, #ced3f7);
-  box-shadow: rgba(70, 150, 184, 0.12) 0px 2px 4px 0px, rgba(44, 95, 116, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(85, 179, 219, 0.1) 0px 2px 6px 0px, rgba(70, 150, 184, 0.2) 0px 2px 16px 0px;
 
   // Before is hour hand, after is minute hand
   &::before, &::after {
     position: absolute;
     content: '';
     background: #333333;
-    width: 0.15rem;
-    height: 0.8125rem;  // refactor to use a var for this for media queries
+    width: 0.25rem;
+    height: 1.125rem;  // refactor to use a var for this for media queries
     top: 50%;
     left: 50%;
     transform-origin: center bottom;
     border-radius: 100vmax;
+    transition: transform 0.2s ease-in-out;
   }
 
   &::before {

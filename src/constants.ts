@@ -9,12 +9,12 @@
       "3", "915", "915", "9"
     ],
     [ // 1
-      null, null, "330", "930",
-      null, null, "6", "6",
-      null, null, "6", "6",
-      null, null, "6", "6",
-      null, null, "6", "6",
-      null, null, "3", "9"
+      null, "330", "930", null,
+      null, "6", "6", null,
+      null, "6", "6", null,
+      null, "6", "6", null,
+      null, "6", "6", null,
+      null, "3", "9", null
     ],
     [ // 2
       "330", "915", "915", "930",
