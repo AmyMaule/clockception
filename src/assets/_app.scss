@@ -25,7 +25,7 @@
   --hand-width: 0.2vw;
   --hand-height: 1.3vw;
   --digit-gap: 1vw;
-  --digit-divider-size: 5rem;
+  --digit-divider-size: max(5rem, 6.75vw);
 }
 
 body {
@@ -44,7 +44,7 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  padding: 1rem;
+  padding: max(1rem, 1vw);
   background-color: var(--bg);
 }
 
@@ -80,7 +80,7 @@ body {
 
 .title {
   font-family: 'DS-digi';
-  font-size: 3.5rem;
+  font-size: max(3.5rem, 4.75vw);
   text-align: center;
   font-weight: 700;
   color: var(--color-text);
@@ -91,40 +91,27 @@ body {
   font-family: 'DS-digi';
   text-align: center;
   color: var(--color-text-subtitle);
-  font-size: 1.75rem;
+  font-size: max(1.75rem, 2.5vw);
   margin: 0;
 }
 
 .theme-toggle-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
-}
-
-.theme-toggle-title {
-  color: var(--color-text-subtitle);
-  font-size: 2.25rem;
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-.theme-toggle-btn-container {
-  display: flex;
-  gap: 1rem;
+  gap: max(1rem, 1.5vw);
+  margin-top: max(1.5rem, 2vw);
 }
 
 .btn-theme-toggle {
   font-family: 'novamono';
-  font-size: 2rem;
+  font-size: max(2rem, 2.75vw);
   background: var(--clock-bg);
   color: var(--color-text-subtitle);
   border: 2px solid var(--color-accent);
   border-radius: 0.25rem;
   letter-spacing: 2px;
-  padding: 0 0.5625rem;
+  padding: 0 max(0.5625rem, 1vw);
   cursor: pointer;
 
   &:hover {
@@ -153,7 +140,7 @@ body {
   border: 2px solid var(--color-accent);
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  padding: 3rem;
+  padding: max(3rem, 4vw);
   margin: auto 0;
 }
 

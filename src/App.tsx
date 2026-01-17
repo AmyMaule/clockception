@@ -35,18 +35,15 @@ const App = () => {
       <h1 className="title">Clockception</h1>
       <p className="subtitle">A digital clock made of analog clocks</p>
       <div className="theme-toggle-container">
-        <h6 className="theme-toggle-title">Mode:</h6>
-        <div className="theme-toggle-btn-container">
-          <button className={`btn-theme-toggle ${theme === "light" ? "btn-selected" : ""}`} onClick={() => setTheme('light')}
-            >Light
-          </button>
-          <button className={`btn-theme-toggle ${theme === "dark" ? "btn-selected" : ""}`} onClick={() => setTheme('dark')}
-            >Dark
-          </button>
-          <button className={`btn-theme-toggle ${theme === "retro" ? "btn-selected" : ""}`} onClick={() => setTheme('retro')}
-            >Retro
-          </button>
-        </div>
+        <button className={`btn-theme-toggle ${theme === "light" ? "btn-selected" : ""}`} onClick={() => setTheme('light')}
+          >Light
+        </button>
+        <button className={`btn-theme-toggle ${theme === "dark" ? "btn-selected" : ""}`} onClick={() => setTheme('dark')}
+          >Dark
+        </button>
+        <button className={`btn-theme-toggle ${theme === "retro" ? "btn-selected" : ""}`} onClick={() => setTheme('retro')}
+          >Retro
+        </button>
       </div>
       <div className="time-container">
         {time.map((digit, i) => (
